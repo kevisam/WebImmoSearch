@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="css/Homepage.css">
+</head>
+<body>
+    <div class="banner">
+        <div class="banner__content">
+                <img src="images/WebImmoBanner.png" class="banner__image"></img>
+        </div>
+    </div>
+
+    <div class="homepage__content">
+        <div class=homepage__LeftButtons>
+            <button class="homepage__LeftButton"> EJS Data News</button>
+            <button class="homepage__LeftButton">Local Consult</button>
+        </div>
+    
+        <div class="homepage__MiddleButtons"> 
+            <div class="MiddleButtons_FirstRow">
+                <button class="MiddleFirstRowButton"> Your Request</button>
+                <button class="MiddleFirstRowButton"> Private To Private</button>
+                <button class="MiddleFirstRowButton"> Estimate by Agency</button>
+                <button class="MiddleFirstRowButton"> Platform</button>
+            </div>
+
+            <div class="MiddleButtons_SecondRow">
+                <button class="MiddleSecondRowButton"> Direct Auction Public Goods and Corporate Goods</button>
+                <button class="MiddleSecondRowButton"> Investor to Investor</button>
+                <button class="MiddleSecondRowButton"> Pro Agency</button>
+                <button class="MiddleSecondRowButton"> Estimate By Agency</button>
+            </div>
+
+            <div class="MiddleButtons_ThirdRow">
+                <button class="MiddleThirdRowButton"> For Sale</button>
+                <button class="MiddleThirdRowButton"> For Rent</button>
+            </div>
+
+        </div>
+
+        <div class="homepage__RightButtons">
+            <button class=" homepage__RightButton " type="button" onclick="location.href='/users/register'">Register</button>
+
+            <button class="homepage__RightButton"> My WebImmoFree</button>
+            <button class="homepage__RightButton"> Publish my ad </button>
+
+            <div class="RightButtons__login">
+                <input class="loginInput" type="text" placeholder="email">
+                <input class="loginInput" type="text" placeholder="Password">
+                <a href="/"> Mot de passe oublié ?</a>
+            </div>
+        </div>
+
+        <div class="homepage__ResearchBar">
+            <select class="ResearchBar__SelectAdress">
+                <option class="SelectAdressOption"> 1200 Woluwe-Saint-Lambert</option>
+            </select>
+
+            <select class="ResearchBar__SelectType">
+                <option class="SelectTypeOption"> House</option>
+            </select>
+
+            <input class= "ResearchBar__PriceRange" type="range">
+            <input class= "ResearchBar__nrRooms"type="text">
+            <button class="Research__Button">Search</button>
+
+        </div>
+
+        
+
+    </div>
+    
+</body>
+</html>

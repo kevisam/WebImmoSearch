@@ -1,0 +1,81 @@
+.banner__content{
+    background-color: aqua;
+}
+.banner__image{
+    width: 100%;
+}
+
+.homepage__content{
+    border: 3px solid #fff;
+    padding: 20px;
+}
+
+.homepage__LeftButtons{
+    width: 25%;
+    float: left;
+    padding: 20px;
+    border: 2px solid red;
+
+}
+
+.homepage__LeftButton{
+    display: block;
+    width: 100%;
+    height: 60px;
+    font-size: 15px; 
+    font-family: Comic Sans MS, cursive, sans-serif;
+  }
+  
+
+.homepage__MiddleButtons{
+    width: 50%;
+    float: left;
+    padding: 20px;
+    border: 2px solid red;
+    text-align: center;
+}
+
+.MiddleFirstRowButton{
+    height: 50px;
+    width: 100px;
+    text-align: center;
+    display:table-cell;
+    vertical-align:middle;
+}
+
+.MiddleSecondRowButton{
+    height: 50px;
+    width: 100px;
+    text-align: center;
+    display:table-cell;
+    vertical-align:middle;
+}
+.MiddleThirdRowButton{
+    height: 50px;
+    width: 100px;
+}
+
+.homepage__RightButtons{
+    float: left;
+    width: 25%;
+    text-align: right;
+}
+
+.homepage__RightButton{
+    width: 150px;
+    height: 40;
+}
+
+.RightButtons__login{
+    float: left;
+}
+
+.loginInput{
+    width: 45%;
+}
+
+.homepage__ResearchBar{
+    width: 100%;
+    display: inline;
+}
+
