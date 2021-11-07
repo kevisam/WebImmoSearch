@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
-    <link rel="stylesheet" href="css/Homepage.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/myProfile.css">
 </head>
 <body>
+
     <div class="banner">
         <div class="banner__content">
                 <img src="https://i.ibb.co/pRmMvJB/Fond-Haut-de-page.png" class="banner__image"></img>
@@ -53,36 +54,38 @@
             <button class="homepage__RightButton"> My WebImmoFree</button>
             <button class="homepage__RightButton" onclick="window.location.href='/articles/new';" > Publish my ad </button>
             <button class=" homepage__RightButton " type="button" onclick="location.href='/users/myProfile'">My Profile</button>
-            <!--
-            <div class="RightButtons__login">
-                <input class="loginInput" type="text" placeholder="email">
-                <input class="loginInput" type="text" placeholder="Password">
-                <a href="/"> Mot de passe oublié ?</a>
-            </div> --->
+
+
+    <h1 class="mt-4">My profile</h1>
+
+<div class="registerContainer">
+    <div class="row">
+        <div class="block">
+            First Name : <%= user.name%>
         </div>
 
-        <div class="homepage__ResearchBar">
-            <img class="homepage__ResearchBarImage" src="images\Fond_Form_Search.png" alt="">
-            <div class="banner__logo">
+        <div class="block">
+            Name : <%= user.surname%>
 
-                <select class="ResearchBar__SelectAdress">
-                    <option class="SelectAdressOption"> 1200 Woluwe-Saint-Lambert</option>
-                </select>
-        
-                <select class="ResearchBar__SelectType">
-                    <option class="SelectTypeOption"> House</option>
-                </select>
-        
-                <input class= "ResearchBar__PriceRange" type="range">
-                <input class= "ResearchBar__nrRooms"type="text">
-                <button class="ResearchBar__Button">Search</button>
-            </div> 
-            
-    
         </div>
-        
-
     </div>
-    
+
+    <div class="secondLine">
+        
+        <div class="email">
+            e-mail : <%= user.email%>
+        </div>
+
+        <div class="adress">
+            Address : <%= user.address%>
+        </div>
+    </div>
+
+    <div class="buttonLine">
+        <button onclick="window.location.href='/users/editProfile';" style="background-color: green; color : azure;">Modify my profile</button>
+    </div>
+</div>
+
+
 </body>
 </html>

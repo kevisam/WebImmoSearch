@@ -24,28 +24,3 @@
     left: 30%;
     display: block;
 }
-
-.registerPageForm{
-    background-image: url('https://i.ibb.co/HFhWPRF/Fond-Form-Register.png');
-    color: azure;
-}
-
-.input{
-    display: block;
-}
-.row{
-    display: flex;
-    flex-direction: row;
-    margin-left: 1em;
-    gap: 10px 10px;
-}
-
-.inputBox{
-    flex:1;
-    flex-basis: auto;
-    
-}
-
-.center{
-    text-align: center;
-}

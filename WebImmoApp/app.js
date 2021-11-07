@@ -4,8 +4,8 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 const flash = require('connect-flash');
 const session = require('express-session');
-
-
+const articleRouter = require('./routes/articles');
+const Article = require('./models/article')
 
 const app = express();
 
@@ -17,6 +17,7 @@ app.use(express.static('public'));
 app.use('/css', express.static(__dirname + 'public/css'));
 app.use('/js', express.static(__dirname + 'public/js'));
 app.use('/images', express.static(__dirname + 'public/images'));
+
 
 //DB Config
 const db = require('./config/keys').MongoURI;
@@ -31,6 +32,7 @@ app.set('view engine', 'ejs');
 
 //Bodyparser
 app.use(express.urlencoded({ extended: false}));
+
 
 //Express session
 app.use(
@@ -61,8 +63,7 @@ app.use(function(req, res, next) {
 app.use('/', require('./routes/index'));
 app.use('/users', require('./routes/users'));
 
-
-
 const PORT = process.env.PORT || 5000;
 
+app.use('/articles', articleRouter);
 app.listen(PORT,console.log('Server started on port ' + PORT));

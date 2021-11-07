@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
-
+const Users = require('../models/Users');
 // User model
 
 const User = require('../models/Users')
@@ -13,7 +13,7 @@ router.get('/login', (req,res) => res.render('login'));
 // Login handle 
 router.post('/login', (req, res, next) => {
   passport.authenticate('local', {
-    successRedirect: '/dashboard',
+    successRedirect: '/articles',
     failureRedirect: '/users/login',
     failureFlash: true
   })(req, res, next);
@@ -28,6 +28,34 @@ router.get('/logout', (req, res) => {
 
 // Register Page
 router.get('/register', (req,res) => res.render('register'));
+
+//editProfile page 
+router.get('/editProfile', (req,res) => {
+  res.render('editProfile', {user : req.user})
+})
+
+router.get('/myProfile', (req,res) => {
+  res.render('myProfile', {user : req.user})
+})
+
+router.post('/myProfile', async(req,res) => {
+  
+  const user = await Users.findOneAndUpdate(
+    { email: req.user.email },
+    {  
+      name: req.body.name,
+      surname : req.body.surname,
+      address : req.body.address,
+      }
+)
+req.user.name = req.body.name,
+req.user.surname = req.body.surname,
+req.user.address = req.body.address,
+
+res.render('myProfile',{user : req.user})
+})
+  
+
 
 
 // Register Handle

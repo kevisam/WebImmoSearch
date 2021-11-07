@@ -1,0 +1,24 @@
+<div class="form-group">
+    <label for="housetype"> Housetype</label>
+    <select name="housetype">
+        <option value="House">House</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="housetype"> Postal Code</label>
+    <input required value="<%= article.postalCode%>" type="text" name="postalCode" id="postalCode" class="form-control">
+</div>
+
+<div class="form-group">
+    <label for="housetype"> Number of rooms</label>
+    <input required value="<%= article.nrRooms%>" type="text" name="nrRooms" id="nrRooms" class="form-control">
+</div>
+
+<div class="form-group">
+    <label for="description"> Asked price</label>
+    <input required name="price" id="price" class="form-control"><%= article.price%></input>
+</div>
+
+<a href="/" class="btn btn-secondary">Cancel</a>
+<button type="submit" class="btn btn-primary">Save</button>

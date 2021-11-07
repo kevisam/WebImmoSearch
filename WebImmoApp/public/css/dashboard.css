@@ -1,0 +1,10 @@
+.row {
+    margin-left: 3em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+  }
+  .block {
+    width: 100px;
+  }

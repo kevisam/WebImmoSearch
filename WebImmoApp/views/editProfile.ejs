@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<form action="/users/myProfile" method="post">
+    <div class="form-group">
+        <label for="name"> Name</label>
+        <input required value="<%= user.name%>" type="text" name="name" id="name" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label for="surname"> Surname</label>
+        <input required value="<%= user.surname%>" type="text" name="surname" id="surname" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label for="email"> E-mail </label>
+        <input required value="<%= user.email%>" type="text" name="email" id="email" readonly class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label for="address"> <Address></Address></label>
+        <input required value="<%= user.address%>" type="text" name="address" id="address" class="form-control">
+    </div>
+
+    <button type="submit"> Save </button>
+</form>
+
+</body>
+</html>
