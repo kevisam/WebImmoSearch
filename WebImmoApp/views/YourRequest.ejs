@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/yourRequest.css">
+    <title>Your Request</title>
+</head>
+
+<body>
+    <div class="banner">
+        <div class="banner__content">
+            <img src="https://i.ibb.co/pRmMvJB/Fond-Haut-de-page.png" class="banner__image"></img>
+            <div class="banner__logo">
+                <img class="banner__logoButton" src="https://i.ibb.co/gtz5rnY/Logo-cl.png"></img>
+                <img class="banner__logoTitle" src="https://i.ibb.co/S0PKQwH/Web-Immo-Free-Title.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="form">
+        <div>
+            <h1>Your Request</h1>
+        </div>
+
+        <div>
+            <label for="rental" class=checkboxlabel> Auction Type</label>
+            <select name="auctiontype">
+                <option value="rental">Rental</option>
+                <option value="sell">Buy</option>
+            </select>
+        </div>
+
+        <div>
+            <form action="" method="post">
+                <!-- NOT NEEDED BECAUSE USER SHOULD BE LOGGED IN
+                <div>
+                    <input required type="text" placeholder="Title">
+                    <input required type="text" placeholder="Surname">
+                    <input required type="text" placeholder="Name">
+                    <input required type="text" placeholder="Phone">
+                </div>
+    
+                <div>
+                    <input required type="text" placeholder="email">
+                    <input required type="text" placeholder="Address">
+                    <input required type="text" placeholder="Postcode">
+                </div>
+    
+                <div>
+                    <input required type="text" placeholder="Municipality">
+                    <input required type="text" placeholder="Loan granted">
+                    <input required type="text" placeholder="Date of entry">
+                </div>
+    -->
+                <div>
+                    <h2> Research details</h2>
+                </div>
+
+                <div>
+                    <div>
+                        <input required type="text" placeholder="Type">
+                        <input required type="text" placeholder="Number of rooms">
+                        <input required type="text" placeholder="Minimum Price">
+                        <input required type="text" placeholder="Maximum Price">
+                    </div>
+
+                    <div>
+                        <select name="housetype" id="housetype">
+                            <option class="SelectTypeOption"> House</option>
+                            <option class="SelectTypeOption"> Appartment</option>
+                            <option class="SelectTypeOption"> Flat</option>
+                            <option class="SelectTypeOption"> Housesharing</option>
+                            <option class="SelectTypeOption"> Appartmentsharing</option>
+                            <option class="SelectTypeOption"> Flatsharing</option>
+                            <option class="SelectTypeOption"> Furnished house</option>
+                            <option class="SelectTypeOption"> Furnished appartment</option>
+                            <option class="SelectTypeOption"> Furnished flat</option>
+                            <option class="SelectTypeOption"> Notary Sale</option>
+                            <option class="SelectTypeOption"> Land</option>
+                            <option class="SelectTypeOption"> New construction</option>
+                            <option class="SelectTypeOption"> B & B</option>
+                        </select>
+                        <input required type="text" placeholder="Postcode">
+                    </div>
+
+                    <div>
+                        <input type="submit" value="Send">
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

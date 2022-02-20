@@ -2,23 +2,48 @@
     <label for="housetype"> Housetype</label>
     <select name="housetype">
         <option value="House">House</option>
+        <option class="SelectTypeOption"> Appartment</option>
+        <option class="SelectTypeOption"> Flat</option>
+        <option class="SelectTypeOption"> Housesharing</option>
+        <option class="SelectTypeOption"> Appartmentsharing</option>
+        <option class="SelectTypeOption"> Flatsharing</option>
+        <option class="SelectTypeOption"> Furnished house</option>
+        <option class="SelectTypeOption"> Furnished appartment</option>
+        <option class="SelectTypeOption"> Furnished flat</option>
+        <option class="SelectTypeOption"> Notary Sale</option>
+        <option class="SelectTypeOption"> Land</option>
+        <option class="SelectTypeOption"> New construction</option>
+        <option class="SelectTypeOption"> B & B</option>
     </select>
 </div>
 
 <div class="form-group">
-    <label for="housetype"> Postal Code</label>
+    <label for="auctiontype">Auction type</label>
+    <select name="auctiontype">
+        <option value="rental">Rental</option>
+        <option value="sell">Sell</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="postalCode"> Postal Code</label>
     <input required value="<%= article.postalCode%>" type="text" name="postalCode" id="postalCode" class="form-control">
 </div>
 
 <div class="form-group">
-    <label for="housetype"> Number of rooms</label>
+    <label for="nrRooms"> Number of rooms</label>
     <input required value="<%= article.nrRooms%>" type="text" name="nrRooms" id="nrRooms" class="form-control">
 </div>
 
 <div class="form-group">
-    <label for="description"> Asked price</label>
+    <label for="price"> Asked price</label>
     <input required name="price" id="price" class="form-control"><%= article.price%></input>
 </div>
 
+<div class="form-group">
+    <label for="image"> Upload image</label>
+    <input required name="image" id="image" type="file" class="form-control"></input>
+</div>
+
 <a href="/" class="btn btn-secondary">Cancel</a>
-<button type="submit" class="btn btn-primary">Save</button>
+<button type="submit" class="btn btn-danger">Save</button>

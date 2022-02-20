@@ -101,4 +101,19 @@ a.button {
     height: 40;
 }
 
+.block{
+    margin-left: 1em;
+    margin-right: 1em;
+    font-size: large;
+}
+
+.row{
+    margin-bottom: 1em;
+}
+
+.container-dashboard{
+    width: 100%;
+    background-image: url('https://i.ibb.co/HFhWPRF/Fond-Form-Register.png');
+}
+
 

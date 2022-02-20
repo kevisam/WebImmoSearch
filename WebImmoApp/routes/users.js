@@ -2,10 +2,12 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
+const {ensureAuthenticated} = require('../config/auth');
 const Users = require('../models/Users');
 // User model
 
-const User = require('../models/Users')
+const User = require('../models/Users');
+const { request } = require('express');
 // Login Page
 router.get('/login', (req,res) => res.render('login'));
 
@@ -27,18 +29,18 @@ router.get('/logout', (req, res) => {
 });
 
 // Register Page
-router.get('/register', (req,res) => res.render('register'));
+router.get('/register', (req,res) => res.render('register',{message : req.flash('message')}));
 
 //editProfile page 
 router.get('/editProfile', (req,res) => {
   res.render('editProfile', {user : req.user})
 })
 
-router.get('/myProfile', (req,res) => {
+router.get('/myProfile', ensureAuthenticated , (req,res) => {
   res.render('myProfile', {user : req.user})
 })
 
-router.post('/myProfile', async(req,res) => {
+router.post('/myProfile',  ensureAuthenticated, async(req,res) => {
   
   const user = await Users.findOneAndUpdate(
     { email: req.user.email },
@@ -73,7 +75,8 @@ router.post('/register', (req,res) => {
       User.findOne({email:email}).then(user => {
           if(user) {
               // User exists
-
+            req.flash('message', 'Email already exists!')
+            res.redirect('/users/register')
           } else {
               // Here we create the user in the database
               const newUser = new User({

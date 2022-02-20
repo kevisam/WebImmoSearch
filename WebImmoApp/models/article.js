@@ -6,15 +6,24 @@ const articleSchema = new mongoose.Schema({
         required : true
     },
     price:{
-        type:Number
+        type:Number,
+        required : true
     },
     nrRooms:{
-        type:String
+        type:Number,
+        required : true
     },
     postalCode:{
-        type:Number
+        type:Number,
+        required : true
     },
     author:{
+        type:String
+    },
+    image:{
+        type:String
+    },
+    auctiontype:{
         type:String
     }
      /*,

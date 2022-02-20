@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,14 +8,15 @@
     <title>Homepage</title>
     <link rel="stylesheet" href="css/Homepage.css">
 </head>
+
 <body>
     <div class="banner">
         <div class="banner__content">
-                <img src="https://i.ibb.co/pRmMvJB/Fond-Haut-de-page.png" class="banner__image"></img>
-                <div class="banner__logo">
-                    <img  class="banner__logoButton" src="https://i.ibb.co/gtz5rnY/Logo-cl.png"></img>
-                    <img  class="banner__logoTitle" src="https://i.ibb.co/S0PKQwH/Web-Immo-Free-Title.png" alt="">
-                </div>
+            <img src="https://i.ibb.co/pRmMvJB/Fond-Haut-de-page.png" class="banner__image"></img>
+            <div class="banner__logo">
+                <img class="banner__logoButton" src="https://i.ibb.co/gtz5rnY/Logo-cl.png"></img>
+                <img class="banner__logoTitle" src="https://i.ibb.co/S0PKQwH/Web-Immo-Free-Title.png" alt="">
+            </div>
         </div>
     </div>
 
@@ -23,12 +25,14 @@
             <button class="homepage__LeftButton"> EJS Data News</button>
             <button class="homepage__LeftButton">Local Consult</button>
         </div>
-    
-        <div class="homepage__MiddleButtons"> 
+
+        <div class="homepage__MiddleButtons">
             <div class="MiddleButtons_FirstRow">
-                <button class="MiddleFirstRowButton"> Your Request</button>
+                <button class="MiddleFirstRowButton" onclick="window.location.href='/request';"> Your
+                    Request</button>
                 <button class="MiddleFirstRowButton"> Private To Private</button>
-                <button class="MiddleFirstRowButton"> Estimate by Agency</button>
+                <button class="MiddleFirstRowButton" onclick="window.location.href='/estimate';"> Estimate by
+                    Agency</button>
                 <button class="MiddleFirstRowButton"> Platform</button>
             </div>
 
@@ -36,7 +40,8 @@
                 <button class="MiddleSecondRowButton"> Direct Auction Public Goods and Corporate Goods</button>
                 <button class="MiddleSecondRowButton"> Investor to Investor</button>
                 <button class="MiddleSecondRowButton"> Pro Agency</button>
-                <button class="MiddleSecondRowButton"> Estimate By Agency</button>
+                <button class="MiddleSecondRowButton" onclick="window.location.href='/estimate';"> Estimate By
+                    Agency</button>
             </div>
 
             <div class="MiddleButtons_ThirdRow">
@@ -47,12 +52,15 @@
         </div>
 
         <div class="homepage__RightButtons">
-            <button class=" homepage__RightButton " type="button" onclick="location.href='/users/register'">Register</button>
+            <button class=" homepage__RightButton " type="button"
+                onclick="location.href='/users/register'">Register</button>
             <button class=" homepage__RightButton " type="button" onclick="location.href='/users/login'">Login</button>
 
             <button class="homepage__RightButton"> My WebImmoFree</button>
-            <button class="homepage__RightButton" onclick="window.location.href='/articles/new';" > Publish my ad </button>
-            <button class=" homepage__RightButton " type="button" onclick="location.href='/users/myProfile'">My Profile</button>
+            <button class="homepage__RightButton" onclick="window.location.href='/articles/new';"> Publish my ad
+            </button>
+            <button class=" homepage__RightButton " type="button" onclick="location.href='/users/myProfile'">My
+                Profile</button>
             <!--
             <div class="RightButtons__login">
                 <input class="loginInput" type="text" placeholder="email">
@@ -62,27 +70,63 @@
         </div>
 
         <div class="homepage__ResearchBar">
-            <img class="homepage__ResearchBarImage" src="images\Fond_Form_Search.png" alt="">
+            <!--<img class="homepage__ResearchBarImage" src="images\Fond_Form_Search.png" alt="">-->
             <div class="banner__logo">
 
-                <select class="ResearchBar__SelectAdress">
-                    <option class="SelectAdressOption"> 1200 Woluwe-Saint-Lambert</option>
-                </select>
-        
-                <select class="ResearchBar__SelectType">
-                    <option class="SelectTypeOption"> House</option>
-                </select>
-        
-                <input class= "ResearchBar__PriceRange" type="range">
-                <input class= "ResearchBar__nrRooms"type="text">
-                <button class="ResearchBar__Button">Search</button>
-            </div> 
-            
-    
+                <form action="/articles/search" method="POST">
+
+                    <!--
+                    <div>
+                        <label class="switch switch-slide">
+                            <input class="switch-input" type="checkbox" />
+                            <span class="switch-label" data-on="Buy" data-off="Rent"></span>
+                            <span class="switch-handle"></span>
+                        </label>
+                    </div>
+-->
+                    <div>
+                        <label for="rental" class=checkboxlabel> Auction Type</label>
+                        <select name="auctiontype">
+                            <option value="rental">Rental</option>
+                            <option value="sell">Buy</option>
+                        </select>
+                    </div>
+
+                    <input name="postalCode" type="text" class="ResearchBar__SelectAdress">
+                    <select name="housetype" class="ResearchBar__SelectType">
+                        <option class="SelectTypeOption"> House</option>
+                        <option class="SelectTypeOption"> Appartment</option>
+                        <option class="SelectTypeOption"> Flat</option>
+                        <option class="SelectTypeOption"> Housesharing</option>
+                        <option class="SelectTypeOption"> Appartmentsharing</option>
+                        <option class="SelectTypeOption"> Flatsharing</option>
+                        <option class="SelectTypeOption"> Furnished house</option>
+                        <option class="SelectTypeOption"> Furnished appartment</option>
+                        <option class="SelectTypeOption"> Furnished flat</option>
+                        <option class="SelectTypeOption"> Notary Sale</option>
+                        <option class="SelectTypeOption"> Land</option>
+                        <option class="SelectTypeOption"> New construction</option>
+                        <option class="SelectTypeOption"> B & B</option>
+                    </select>
+                    <input name="price" class="ResearchBar__PriceRange" min="0" max="500000" step="100"
+                        oninput="updateTextInput(this.value);" type="range">
+                    <input type="text" class="showPrice" id="showPrice" value="">
+                    <input name="nrRooms" class="ResearchBar__nrRooms" type="text">
+                    <input type='submit' class="ResearchBar__Button" value="Submit">
+                </form>
+            </div>
+
+
         </div>
-        
+
 
     </div>
-    
+
 </body>
+<script>
+    function updateTextInput(val) {
+        document.getElementById('showPrice').value = val;
+    }
+</script>
+
 </html>

@@ -5,7 +5,9 @@ const passport = require('passport');
 const flash = require('connect-flash');
 const session = require('express-session');
 const articleRouter = require('./routes/articles');
-const Article = require('./models/article')
+const bodyParser = require('body-parser');
+const Article = require('./models/article');
+
 
 const app = express();
 
@@ -31,7 +33,7 @@ app.use(expressLayouts);
 app.set('view engine', 'ejs');
 
 //Bodyparser
-app.use(express.urlencoded({ extended: false}));
+app.use(express.urlencoded({ extended: true}));
 
 
 //Express session

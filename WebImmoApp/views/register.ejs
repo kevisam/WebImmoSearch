@@ -1,81 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/register.css">
 </head>
+
+<% if(message.lenth > 0) { %>
+<div class="alert">
+    <%= message %>
+</div>
+<% } %>
+
 <body>
-        <div class="banner">
-            <div class="banner__content">
-                    <img src="https://i.ibb.co/pRmMvJB/Fond-Haut-de-page.png" class="banner__image"></img>
-                    <div class="banner__logo">
-                        <img  class="banner__logoButton" src="https://i.ibb.co/gtz5rnY/Logo-cl.png"></img>
-                        <img  class="banner__logoTitle" src="https://i.ibb.co/S0PKQwH/Web-Immo-Free-Title.png" alt="">
-                    </div>
+    <div class="banner">
+        <div class="banner__content">
+            <img src="https://i.ibb.co/pRmMvJB/Fond-Haut-de-page.png" class="banner__image"></img>
+            <div class="banner__logo">
+                <img class="banner__logoButton" src="https://i.ibb.co/gtz5rnY/Logo-cl.png"></img>
+                <img class="banner__logoTitle" src="https://i.ibb.co/S0PKQwH/Web-Immo-Free-Title.png" alt="">
             </div>
         </div>
-    
-        <div class="center">
-            <h1>Register P to P or Pro</h1>
-        </div>
-      
+    </div>
 
-             <div class="registerPageForm">
-    
-        <form action="/users/register" method="POST">
+    <div class="center">
+        <h1>Register P to P or Pro</h1>
+    </div>
+
+
+
+    <div class="registerPageForm">
+
+        <form id="form" action="/users/register" method="POST">
             <div class="row">
 
 
                 <input placeholder="Title" class="inputBox" name="title" type="text" value="" required>
-                <input placeholder="Surname"class="inputBox" name="surname" type="text" value="" required>
-                <input placeholder="Name"class="inputBox" name="name" type="text" value="" required>
-                <input placeholder="Phone number"class="inputBox" name="phone" type="text" value="" required>
+                <input placeholder="Surname" class="inputBox" name="surname" type="text" value="" required>
+                <input placeholder="Name" class="inputBox" name="name" type="text" value="" required>
+                <input placeholder="Phone number" class="inputBox" name="phone" type="text" value="" required>
 
-               
-                
-                
-                
             </div>
-        
+
             <div class="row">
-                <input placeholder="Email" class="inputBox" name="email" type="text" value="" required>
+                <input placeholder="Email" class="inputBox" id="email" name="email" type="text" value="" required>
                 <input placeholder="Password" class="inputBox" name="password" type="password" value="" required>
-                <input placeholder="Confirm password" class="inputBox" name="password2" type="password" value="" required>
+                <input placeholder="Confirm password" class="inputBox" name="password2" type="password" value=""
+                    required>
                 <input placeholder="Address" class="inputBox" name="address" type="text" value="" required>
             </div>
-        
+
             <div class="row">
 
-                <input placeholder="Postal code" class="inputBox" name="postcode" type="text" value="" required> 
+                <input placeholder="Postal code" class="inputBox" name="postcode" type="text" value="" required>
                 <input placeholder="Municipality" class="inputBox" name="municipality" type="text" value="" required>
-                <input placeholder="Agency" class="inputBox"  name="Agency" type="text" value="">
+                <input placeholder="Agency" class="inputBox" name="Agency" type="text" value="">
                 <input placeholder="I.P.I Number" class="inputBox" name="I.P.I Number" type="text" value="">
             </div>
-        
+
             <div class="RegisterPage__checkbox">
                 <div>
                     <label for="name">P to P </label>
                     <input class="checkbox" type="checkbox">
                 </div>
-                
+
                 <div>
                     <label for="name">Pro </label>
                     <input class="checkbox" type="checkbox">
                 </div>
             </div>
-        
-        
+
+
             <div class="SubmitButton">
                 <button style="background-color: green;" type="submit">Validate</button>
             </div>
-        
+
             <div class="OnceRegisteredText">
                 <h6>Once registered, an email will be sent with your login and password.</h6>
             </div>
         </form>
-     
+
+        <div id="error"></div>
+
 
         <!--
             <form action="/users/register" method="POST">
@@ -142,10 +150,9 @@
             </div>
         </form>
         -->
-  
 
-        
+
+
 </body>
+
 </html>
-
-

@@ -1,0 +1,31 @@
+.banner__content{
+    position: relative;
+}
+.banner__image{
+    width: 100%;
+}
+
+.banner__logoButton{
+    max-width: 30%;
+    height: auto;
+    object-fit: contain;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    display: block;
+}
+
+.banner__logoTitle{
+    max-width: 50%;
+    height: auto;
+    object-fit: contain;
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    display: block;
+}
+
+.form{
+	background-image: url('https://i.ibb.co/HFhWPRF/Fond-Form-Register.png');
+    color: azure;
+}

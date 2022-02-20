@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const {esnureAuthenticated, ensureAuthenticated } = require('../config/auth');
 const Article = require("../models/article")
 
 
@@ -14,4 +13,9 @@ router.get('/dashboard', async(req,res) =>
      articles : articles
  }));
 
+ router.get('/request', (req,res) => res.render('YourRequest'));
+
+ router.get('/estimate', (req,res) => res.render('estimateByAgency'));
+
+ router.get('/investortoinvestor',(req,res) => res.render('investortoinvestor'));
 module.exports = router;

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estimate By Agency</title>
+    <link rel="stylesheet" href="/css/estimateByAgency.css">
+</head>
+
+<body>
+
+    <div class="banner">
+        <div class="banner__content">
+            <img src="https://i.ibb.co/pRmMvJB/Fond-Haut-de-page.png" class="banner__image"></img>
+            <div class="banner__logo">
+                <img class="banner__logoButton" src="https://i.ibb.co/gtz5rnY/Logo-cl.png"></img>
+                <img class="banner__logoTitle" src="https://i.ibb.co/S0PKQwH/Web-Immo-Free-Title.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="form">
+        <form action="">
+            <h1>
+                Property to Estimate
+            </h1>
+            <div>
+                <select name="searching" id="searching">
+                    <option>Sell</option>
+                    <option>Rent</option>
+                </select>
+
+                <select name="housetype" id="housetype">
+                    <option class="SelectTypeOption"> House</option>
+                    <option class="SelectTypeOption"> Appartment</option>
+                    <option class="SelectTypeOption"> Flat</option>
+                    <option class="SelectTypeOption"> Housesharing</option>
+                    <option class="SelectTypeOption"> Appartmentsharing</option>
+                    <option class="SelectTypeOption"> Flatsharing</option>
+                    <option class="SelectTypeOption"> Furnished house</option>
+                    <option class="SelectTypeOption"> Furnished appartment</option>
+                    <option class="SelectTypeOption"> Furnished flat</option>
+                    <option class="SelectTypeOption"> Notary Sale</option>
+                    <option class="SelectTypeOption"> Land</option>
+                    <option class="SelectTypeOption"> New construction</option>
+                    <option class="SelectTypeOption"> B & B</option>
+                </select>
+            </div>
+
+            <div style="margin-top: 1em;">
+                <input required type="text" placeholder="Address">
+                <input required type="text" placeholder="Postcode">
+                <input required type="text" placeholder="Municipality">
+            </div>
+
+            <div>
+                <textarea style="margin-top: 1em;" name="remarks" id="" cols="30" rows="5"
+                    placeholder="Description"></textarea>
+            </div>
+            <button type="submit">Send request</button>
+    </div>
+
+
+    </form>
+
+
+
+</body>
+
+</html>
